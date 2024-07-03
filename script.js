@@ -17,9 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setInterval(createConfettiPiece, 200);
 
-    // Fireworks Sound Playback
-    const fireworksSound = document.getElementById("fireworks-sound");
-    fireworksSound.play();
+     // Fireworks Sound Playback
+     const fireworksSound = document.getElementById("fireworks-sound");
+     fireworksSound.play().catch(error => {
+         console.log("Playback failed:", error);
+     });
+ 
 
     // Carousel for h1
     const carouselH1 = document.querySelector(".carousel-h1");
