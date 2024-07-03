@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="confetti-container"></div>
+    <h1 class="carousel-h1">Happy BIG 30 BABY</h1>
+    <div class="carousel">
+      <div class="carousel-inner">
+        <img src="/images/image1.jpg" alt="Image 1" />
+        <img src="/images/image2.jpg" alt="Image 2" />
+        <img src="/images/image3.jpg" alt="Image 3" />
+        <img src="/images/image4.jpg" alt="Image 4" />
+        <img src="/images/image5.jpg" alt="Image 5" />
+        <img src="/images/image6.jpg" alt="Image 6" />
+        <img src="/images/image7.jpg" alt="Image 7" />
+        <img src="/images/image8.jpg" alt="Image 8" />
+        <img src="/images/image9.jpg" alt="Image 9" />
+        <img src="/images/image10.jpg" alt="Image 10" />
+        <img src="/images/image11.jpg" alt="Image 11" />
+      </div>
+      <div class="carousel-inner">
+        <img src="/images/image1.jpg" alt="Image 1" />
+        <img src="/images/image2.jpg" alt="Image 2" />
+        <img src="/images/image3.jpg" alt="Image 3" />
+        <img src="/images/image4.jpg" alt="Image 4" />
+        <img src="/images/image5.jpg" alt="Image 5" />
+        <img src="/images/image6.jpg" alt="Image 6" />
+        <img src="/images/image7.jpg" alt="Image 7" />
+        <img src="/images/image8.jpg" alt="Image 8" />
+        <img src="/images/image9.jpg" alt="Image 9" />
+        <img src="/images/image10.jpg" alt="Image 10" />
+        <img src="/images/image11.jpg" alt="Image 11" />
+      </div>
+    </div>
+    <button id="reveal-button" onclick="openPopup()">Click to Reveal</button>
+
+    <div class="swiper-container hidden" id="popup">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <h1>Why I Love you and wont trade you for anything in the World</h1>
+          </div>
+          <div class="swiper-slide">
+            <p>
+              You're not just my love ❤️; you're my anchor in life's stormy
+              seas. Your presence brings me peace and your smile lights up my
+              world every day. 😊
+            </p>
+          </div>
+          <div class="swiper-slide">
+            <p>
+              Your beauty is beyond compare 🌸, but it's your inner strength and
+              kindness that truly captivate me. I'm so lucky to have a woman who
+              is as beautiful inside as she is outside. 🌟
+            </p>
+          </div>
+          <div class="swiper-slide">
+            <p>
+              Life with you is an endless adventure 🌍. Every experience is
+              richer and more meaningful because I get to share it with you. 🎉
+            </p>
+          </div>
+          <div class="swiper-slide">
+            <p>
+              You're not just my partner 💞; you're my greatest supporter. Your
+              belief in me pushes me to be better every day. With you by my
+              side, I feel unstoppable. 💪
+            </p>
+          </div>
+          <div class="swiper-slide">
+            <p>
+              I count my blessings every day 🌟, and having you in my life is at
+              the top of that list. Thank you for being my rock, my confidant,
+              and my best friend. I love you more than words can express. 💖
+            </p>
+          </div>
+          <div class="swiper-slide">
+            <h1>A prayer for you my Love 🙏❤️</h1>
+          </div>
+          <div class="swiper-slide">
+            <p>
+              My Beloved Tonze, On your special day 🎂, I thank God for bringing
+              you into my life. I pray for your happiness, health, and success.
+              May God’s love guide and protect you always, filling your days
+              with joy and peace. You are one of my greatest blessings. Happy
+              Birthday, my love. 🎈 Amen.
+            </p>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="close-btn" onclick="closePopup()">
+        Close
+      </button>
+    </div>
+
+    <audio id="fireworks-sound" src="/images/fireworks-29629.mp3" loop ></audio>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        grabCursor: true,
+        effect: "creative",
+        creativeEffect: {
+          prev: {
+            shadow: true,
+            translate: [0, 0, -400],
+          },
+          next: {
+            translate: ["100%", 0, 0],
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

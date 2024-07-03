@@ -1,0 +1,223 @@
+body {
+    margin: 0;
+    font-family: "Oleo Script", system-ui;
+    text-align: center;
+    background-color: #282828;
+    overflow: hidden;
+    position: relative;
+}
+
+h1 {
+    color: #9a99ff;
+}
+
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.carousel {
+    margin-top: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+}
+
+.carousel-inner {
+    display: inline-block;
+    animation: scroll 40s infinite linear;
+}
+
+.carousel-inner img {
+    width: 300px;
+    height: 500px;
+    object-fit: cover;
+    margin: 0 20px;
+    border-radius: 15px;
+}
+
+#reveal-button {
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    z-index: 2;
+    background-color: #9a99ff;
+    font-family: "Oleo Script", system-ui;
+    font-weight: 300;
+}
+
+.hidden {
+    display: none;
+}
+
+.swiper-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    background-color: #f1f1f1;
+    border-radius: 6px;
+    text-align: center;
+    padding: 20px;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    z-index: 1000; /* Ensure the popup is above other elements */
+    box-sizing: border-box;
+    width: 80%; /* Adjust width for mobile view */
+    max-width: 600px;
+}
+
+.open-popup {
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.swiper {
+    width: 100%; 
+    height: auto; 
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: greenyellow;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 30px;
+    overflow-wrap: break-word; 
+}
+
+.swiper-slide h1 {
+    font-size: 25px;
+    text-align: center;
+    margin: 10% 0; 
+}
+
+.swiper-slide p {
+    margin-top: 5%;
+    padding: 0 10px;
+}
+
+.swiper-slide:nth-child(1n) {
+    background-color: rgb(206, 17, 17);
+    height: auto;
+}
+
+.swiper-slide:nth-child(2n) {
+    background-color: rgb(0, 140, 255);
+}
+
+.swiper-slide:nth-child(3n) {
+    background-color: rgb(10, 184, 111);
+}
+
+.swiper-slide:nth-child(4n) {
+    background-color: rgb(211, 122, 7);
+}
+
+.swiper-slide:nth-child(5n) {
+    background-color: rgb(118, 163, 12);
+}
+
+.swiper-slide:nth-child(6n) {
+    background-color: rgb(180, 10, 47);
+}
+
+.swiper-slide:nth-child(7n) {
+    background-color: rgb(35, 99, 19);
+}
+
+.swiper-slide:nth-child(8n) {
+    background-color: rgb(0, 68, 255);
+}
+
+.close-btn {
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #9a99ff;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 18px;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotateZ(360deg);
+    }
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel-h1 {
+        margin: 20px;
+    }
+    .carousel-inner img {
+        width: 200px;
+        height: 400px; /* Ensure proper aspect ratio */
+    }
+
+    #reveal-button {
+        margin-top: 50px;
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .swiper {
+        width: 100%; /* Adjust width for mobile view */
+        height: auto; /* Adjust height to content */
+    }
+
+    .swiper-container {
+        width: 90%; /* Adjust width for mobile view */
+        padding: 10px; /* Adjust padding for mobile */
+    }
+
+    .swiper-slide {
+        font-size: 18px; /* Smaller font size for mobile */
+        padding: 10px; /* Add some padding */
+    }
+
+    .swiper-slide h1 {
+        font-size: 20px; /* Smaller font size for mobile */
+        margin: 5% 0; /* Adjust margins */
+    }
+
+    .swiper-slide p {
+        margin-top: 3%; /* Adjust top margin */
+        padding: 0 10px; /* Adjust padding */
+    }
+}
+
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 30px;
+    background-color: red;
+    opacity: 0.7;
+    animation: fall linear infinite;
+}
+
+
