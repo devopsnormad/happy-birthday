@@ -17,12 +17,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setInterval(createConfettiPiece, 200);
 
-     // Fireworks Sound Playback
-     const fireworksSound = document.getElementById("fireworks-sound");
-     fireworksSound.play().catch(error => {
-         console.log("Playback failed:", error);
-     });
- 
+    const fireworksSound = document.getElementById("fireworks-sound");
+
+    // Attempt to play the sound on page load
+    fireworksSound.play().catch(error => {
+      console.log("Autoplay was prevented. User interaction needed:", error);
+
+      // Add an event listener for user interaction
+      document.addEventListener("click", () => {
+        fireworksSound.play();
+      }, { once: true }); 
+    });
 
     // Carousel for h1
     const carouselH1 = document.querySelector(".carousel-h1");
@@ -54,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             card.classList.add("hidden");
             prayer.classList.remove("hidden");
-            popupMessage.textContent = ""; // Clear the message
+            popupMessage.textContent = ""; 
         }
     });
 
@@ -87,9 +92,9 @@ function openPopup() {
                     slideChange: function () {
                         const swiperInstance = this;
                         if (swiperInstance.activeIndex === swiperInstance.slides.length - 1) {
-                            swiperInstance.allowSlideNext = false; // Prevent further swiping to the next slide
+                            swiperInstance.allowSlideNext = false; 
                         } else {
-                            swiperInstance.allowSlideNext = true; // Allow swiping to the next slide
+                            swiperInstance.allowSlideNext = true; 
                         }
                     }
                 }
@@ -104,5 +109,5 @@ function closePopup() {
     popup.classList.remove('open-popup');
     setTimeout(() => {
         popup.classList.add('hidden');
-    }, 400); // Match this duration to the CSS transition duration
+    }, 400); 
 }
