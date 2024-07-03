@@ -26,7 +26,18 @@ document.addEventListener("DOMContentLoaded", function () {
       // Add an event listener for user interaction
       document.addEventListener("click", () => {
         fireworksSound.play();
-      }, { once: true }); 
+      }, { once: true }); // Play only once after the first interaction
+    });
+
+    // Stop audio when page is hidden
+    document.addEventListener("visibilitychange", function() {
+      if (document.hidden) {
+        fireworksSound.pause();
+      } else {
+        fireworksSound.play().catch(error => {
+          console.log("Autoplay was prevented. User interaction needed:", error);
+        });
+      }
     });
 
     // Carousel for h1
